@@ -1,108 +1,166 @@
 <!DOCTYPE html>
 <html lang="vi">
 <head>
-  <title>Infographic và video hướng dẫn</title>
-  <meta name="description" content="Infographic tóm tắt các bước thực hiện mục tiêu và video hướng dẫn chi tiết.">
-</head>
-<head>
   <meta charset="UTF-8">
   <meta name="viewport" content="width=device-width, initial-scale=1.0">
-  <title>Infographic và video</title>
+  <meta name="description" content="Trang giới thiệu bản thân và trưng bày các sản phẩm cá nhân.">
+  <title>Giới thiệu cá nhân | Hồ sơ cá nhân</title>
   <style>
+    :root {
+      color-scheme: light;
+      font-family: Arial, sans-serif;
+      color: #203047;
+      background: #f4f7fb;
+    }
+
     * {
       box-sizing: border-box;
     }
 
     body {
-    <footer>
-  <p>&copy; 2026 Tên của bạn. Bảo lưu mọi quyền.</p>
-</footer>
       margin: 0;
       padding: 40px 20px;
-      font-family: Arial, sans-serif;
-      color: #183047;
-      background: #f3f7fb;
     }
 
     main {
-      max-width: 1000px;
+      width: min(100%, 1080px);
       margin: 0 auto;
     }
 
-    h1 {
-      margin-bottom: 8px;
-      text-align: center;
-      color: #145da0;
-    }
-
-    .intro {
-      margin: 0 0 32px;
-      text-align: center;
-      color: #5b6b7a;
-    }
-
-    .content {
+    .profile {
       display: grid;
-      grid-template-columns: 1fr 1fr;
+      grid-template-columns: auto 1fr;
       gap: 24px;
-      align-items: stretch;
+      align-items: center;
+      margin-bottom: 36px;
+      padding: 32px;
+      border-radius: 20px;
+      background: linear-gradient(135deg, #e7f2ff, #fff);
+      box-shadow: 0 10px 30px rgba(32, 48, 71, 0.08);
     }
 
-    .card {
-      padding: 24px;
-      border-radius: 16px;
-      background: #fff;
-      box-shadow: 0 8px 24px rgba(24, 48, 71, 0.08);
-    }
-
-    .card h2 {
-      margin-top: 0;
-      color: #145da0;
-    }
-
-    .steps {
+    .avatar {
       display: grid;
-      gap: 16px;
-    }
-
-    .step {
-      display: flex;
-      gap: 16px;
-      align-items: flex-start;
-      padding: 16px;
-      border-radius: 12px;
-      background: #eef6ff;
-    }
-
-    .number {
-      display: grid;
-      flex: 0 0 42px;
-      height: 42px;
+      width: 104px;
+      height: 104px;
       place-items: center;
       border-radius: 50%;
       color: #fff;
-      background: #1982c4;
-      font-size: 18px;
-      font-weight: bold;
+      background: #1769aa;
+      font-size: 38px;
+      font-weight: 700;
     }
 
-    .step h3 {
-      margin: 0 0 6px;
+    .eyebrow {
+      margin: 0 0 8px;
+      color: #1769aa;
+      font-size: 0.85rem;
+      font-weight: 700;
+      letter-spacing: 0.12em;
+      text-transform: uppercase;
     }
 
-    .step p {
+    h1,
+    h2,
+    p {
+      margin-top: 0;
+    }
+
+    h1 {
+      margin-bottom: 10px;
+      font-size: clamp(1.8rem, 4vw, 2.6rem);
+    }
+
+    .bio {
+      max-width: 650px;
+      margin-bottom: 16px;
+      color: #526174;
+      line-height: 1.65;
+    }
+
+    .details {
+      display: flex;
+      flex-wrap: wrap;
+      gap: 8px 20px;
       margin: 0;
+      color: #526174;
       line-height: 1.5;
-      color: #526575;
+    }
+
+    .details strong {
+      color: #203047;
+    }
+
+    .section-heading {
+      margin-bottom: 18px;
+    }
+
+    .section-heading h2 {
+      margin-bottom: 6px;
+      color: #173b63;
+    }
+
+    .section-heading p {
+      margin-bottom: 0;
+      color: #627186;
+    }
+
+    .products {
+      display: grid;
+      grid-template-columns: repeat(3, minmax(0, 1fr));
+      gap: 22px;
+    }
+
+    .card {
+      min-width: 0;
+      padding: 22px;
+      border: 1px solid #e5eaf0;
+      border-radius: 16px;
+      background: #fff;
+      box-shadow: 0 8px 24px rgba(32, 48, 71, 0.06);
+    }
+
+    .card h3 {
+      margin: 0 0 8px;
+      color: #1769aa;
+    }
+
+    .card p {
+      color: #627186;
+      line-height: 1.5;
+    }
+
+    .pdf-frame,
+    .image-frame,
+    .video-frame {
+      overflow: hidden;
+      width: 100%;
+      border: 0;
+      border-radius: 10px;
+      background: #eef2f6;
+    }
+
+    .pdf-frame {
+      display: block;
+      height: 360px;
+    }
+
+    .image-frame {
+      display: grid;
+      min-height: 220px;
+      place-items: center;
+    }
+
+    .image-frame img {
+      display: block;
+      max-width: 100%;
+      max-height: 420px;
+      object-fit: contain;
     }
 
     .video-frame {
       position: relative;
-      overflow: hidden;
-      width: 100%;
       aspect-ratio: 16 / 9;
-      border-radius: 12px;
-      background: #e5eaf0;
     }
 
     .video-frame iframe {
@@ -113,67 +171,110 @@
       border: 0;
     }
 
+    .link {
+      display: inline-block;
+      margin-top: 12px;
+      color: #1769aa;
+      font-weight: 700;
+      text-decoration: none;
+    }
+
+    .link:hover {
+      text-decoration: underline;
+    }
+
+    footer {
+      margin-top: 32px;
+      color: #728096;
+      font-size: 0.9rem;
+      text-align: center;
+    }
+
     @media (max-width: 700px) {
       body {
-        padding: 28px 16px;
+        padding: 24px 14px;
       }
 
-      .content {
+      .profile {
         grid-template-columns: 1fr;
+        justify-items: start;
+        padding: 24px;
+      }
+
+      .products {
+        grid-template-columns: 1fr;
+      }
+
+      .pdf-frame {
+        height: 300px;
+      }
+    }
+
+    @media (min-width: 701px) and (max-width: 960px) {
+      .products {
+        grid-template-columns: repeat(2, minmax(0, 1fr));
       }
     }
   </style>
 </head>
 <body>
   <main>
-    <h1>Hướng dẫn thực hiện mục tiêu</h1>
-    <p class="intro">Infographic tóm tắt các bước và video hướng dẫn chi tiết.</p>
+    <header class="profile">
+      <div class="avatar" aria-hidden="true">TB</div>
+      <div>
+        <p class="eyebrow">Hồ sơ cá nhân</p>
+        <h1>Xin chào, mình là Tên của bạn</h1>
+        <p class="bio">Mình là [ngành học / nghề nghiệp] tại [tên trường / nơi làm việc]. Mình yêu thích [lĩnh vực quan tâm] và luôn tìm cơ hội học hỏi qua những dự án mới. Chào mừng bạn đến với trang cá nhân của mình!</p>
+        <p class="details">
+          <span><strong>Lĩnh vực:</strong> [Lĩnh vực của bạn]</span>
+          <span><strong>Sở thích:</strong> [Sở thích của bạn]</span>
+          <span><strong>Email:</strong> <a href="mailto:email@example.com">email@example.com</a></span>
+        </p>
+      </div>
+    </header>
 
-    <div class="content">
-      <section class="card" aria-labelledby="infographic-title">
-        <h2 id="infographic-title">Infographic: 3 bước thực hiện</h2>
+    <section aria-labelledby="products-title">
+      <div class="section-heading">
+        <p class="eyebrow">Tác phẩm</p>
+        <h2 id="products-title">Các sản phẩm của mình</h2>
+        <p>Cùng xem một số sản phẩm mình đã thực hiện: tài liệu, hình ảnh và video.</p>
+      </div>
 
-        <div class="steps">
-          <article class="step">
-            <span class="number">1</span>
-            <div>
-              <h3>Lập kế hoạch</h3>
-              <p>Xác định mục tiêu, thời gian và những việc cần chuẩn bị.</p>
-            </div>
-          </article>
+      <div class="products">
+        <article class="card">
+          <h3>Tài liệu PDF</h3>
+          <p>Tài liệu dự án được hiển thị trực tiếp bên dưới.</p>
+          <iframe class="pdf-frame" src="Lab05_Ex1.2.pdf" title="Tài liệu PDF Lab05 Ex1.2" loading="lazy"></iframe>
+          <a class="link" href="Lab05_Ex1.2.pdf" target="_blank" rel="noopener">Mở tài liệu PDF</a>
+        </article>
 
-          <article class="step">
-            <span class="number">2</span>
-            <div>
-              <h3>Bắt đầu thực hiện</h3>
-              <p>Chia công việc thành từng bước nhỏ và tiến hành lần lượt.</p>
-            </div>
-          </article>
+        <article class="card">
+          <h3>Hình ảnh PNG</h3>
+          <p>Bản xem trước hình ảnh sản phẩm.</p>
+          <div class="image-frame">
+            <img src="Lab05_Ex2.1.png" alt="Sản phẩm hình ảnh PNG Lab05 Ex2.1" loading="lazy">
+          </div>
+          <a class="link" href="Lab05_Ex2.1.png" target="_blank" rel="noopener">Mở ảnh kích thước đầy đủ</a>
+        </article>
 
-          <article class="step">
-            <span class="number">3</span>
-            <div>
-              <h3>Đánh giá kết quả</h3>
-              <p>Kiểm tra tiến độ, ghi nhận kết quả và điều chỉnh khi cần.</p>
-            </div>
-          </article>
-        </div>
-      </section>
+        <article class="card">
+          <h3>Video YouTube</h3>
+          <p>Video YouTube được phát trực tiếp ngay trên trang.</p>
+          <div class="video-frame">
+            <iframe
+              src="https://www.youtube-nocookie.com/embed/jNQXAC9IVRw"
+              title="Video YouTube giới thiệu"
+              loading="lazy"
+              referrerpolicy="strict-origin-when-cross-origin"
+              allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture; web-share"
+              allowfullscreen>
+            </iframe>
+          </div>
+        </article>
+      </div>
+    </section>
 
-      <section class="card" aria-labelledby="video-title">
-        <h2 id="video-title">Video hướng dẫn</h2>
-        <div class="video-frame">
-          <iframe
-            src="https://www.youtube-nocookie.com/embed/VIDEO_ID"
-            title="Video hướng dẫn trên YouTube"
-            loading="lazy"
-            referrerpolicy="strict-origin-when-cross-origin"
-            allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture; web-share"
-            allowfullscreen>
-          </iframe>
-        </div>
-      </section>
-    </div>
+    <footer>&copy; 2026 Tên của bạn. Trang giới thiệu cá nhân.</footer>
   </main>
 </body>
 </html>
